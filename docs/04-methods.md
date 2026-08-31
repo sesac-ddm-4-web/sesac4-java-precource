@@ -1,0 +1,130 @@
+# 모듈 4. 메서드
+
+A트랙 예상 1.5시간 · 코드 위치: [src/module04/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module04)
+
+> 경험자 최단 경로(B트랙): 아래 "핵심 요약"만 읽고 [predict/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module04/predict) 3문제를 풀면 됩니다. P02(값 전달)는 다른 언어 경험자가 특히 헷갈리는 부분입니다.
+
+지금까지는 모든 코드를 main 안에 다 적었습니다. 프로그램이 커지면 이 방식은 금방 한계가 옵니다. 메서드는 코드에 이름을 붙여 기능 단위로 쪼개는 도구입니다. 백엔드 코드를 읽는 일의 대부분이 "이 메서드가 뭘 받아서 뭘 돌려주는지" 파악하는 일이기도 합니다.
+
+## 학습 목표
+
+- [ ] 메서드 선언의 각 부분(리턴 타입, 이름, 매개변수)을 읽을 수 있다
+- [ ] 리턴값이 있는 메서드와 없는(void) 메서드를 만들 수 있다
+- [ ] 메서드에 int를 넘기고 안에서 바꿔도 바깥 변수는 안 바뀌는 이유를 안다
+- [ ] 중복 코드를 메서드로 추출할 수 있다
+
+## 핵심 요약
+
+- 선언: `static 리턴타입 이름(매개변수 목록) { ... }`. 리턴값이 없으면 리턴타입 자리에 void.
+- 호출: `이름(값들)`. 호출하면 그 메서드로 들어갔다가, 끝나면(또는 return을 만나면) 호출한 자리로 돌아옵니다.
+- `return 값;`은 값을 돌려주며 메서드를 즉시 끝냅니다. 조건에 안 맞으면 일찍 return하는 패턴(가드)이 흔합니다.
+- 기본 타입 인자는 값이 복사되어 전달됩니다. 메서드 안에서 바꿔도 바깥 변수는 그대로입니다.
+- 이름이 같고 매개변수가 다른 메서드를 여러 개 만들 수 있습니다(오버로딩).
+- 지금 메서드마다 붙이는 static의 의미는 모듈 5에서 배웁니다. 당분간은 "main에서 바로 부르기 위한 표시"로 생각하세요.
+
+## 1. 메서드 선언과 호출
+
+### 문법
+
+```java
+static 리턴타입 메서드이름(타입 매개변수1, 타입 매개변수2) {
+    // 실행할 코드
+    return 값;   // 리턴타입이 void가 아니면 반드시 값을 돌려줘야 함
+}
+```
+
+부위별로 읽는 법:
+
+```java
+static int add(int a, int b) {
+    return a + b;
+}
+//     └ int      : 이 메서드는 int 값을 돌려준다 (리턴 타입)
+//     └ add      : 메서드 이름 (변수처럼 camelCase)
+//     └ (int a, int b) : 받는 값의 목록 (매개변수). 없으면 빈 괄호 ()
+```
+
+호출하는 쪽:
+
+```java
+int result = add(3, 5);   // 3과 5를 넘기고, 돌려받은 8을 result에 저장
+System.out.println(add(10, 20));   // 돌려받은 값을 바로 출력할 수도 있다
+```
+
+알아둘 것:
+
+- 호출할 때 넘기는 실제 값(3, 5)을 인자라고 하고, 받는 쪽 변수(a, b)를 매개변수라고 합니다.
+- 인자의 개수와 타입은 매개변수와 맞아야 합니다. `add(3)` 이나 `add("a", "b")`는 컴파일 에러입니다.
+- 리턴값이 필요 없는 메서드는 리턴 타입에 void를 쓰고, return문을 생략할 수 있습니다.
+- 메서드 안에서 선언한 변수(지역 변수)는 그 메서드 안에서만 존재합니다. 모듈 1의 중괄호 규칙 그대로입니다.
+
+실행해보기: [Ex01_Method.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module04/ex/Ex01_Method.java)
+
+## 2. return과 가드 패턴
+
+return은 값을 돌려주는 동시에 메서드를 즉시 끝냅니다. 이 성질을 이용하면 "안 되는 경우를 먼저 걸러내는" 코드를 쓸 수 있습니다.
+
+```java
+static String withdraw(int balance, int amount) {
+    if (amount <= 0) {
+        return "잘못된 금액입니다";        // 여기서 끝. 아래로 안 내려감
+    }
+    if (amount > balance) {
+        return "잔액이 부족합니다";        // 여기서 끝
+    }
+    return "출금 완료: " + amount + "원";  // 여기까지 왔다면 정상 케이스
+}
+```
+
+모듈 3의 "AI와 함께"에서 본 중첩 if 줄이기가 바로 이 패턴입니다. 조건을 뒤집어 일찍 return하면 중첩이 사라집니다.
+
+실행해보기: [Ex02_Guard.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module04/ex/Ex02_Guard.java)
+
+> 백엔드 미리보기: 실무 서버 코드의 메서드 첫 부분은 대부분 이런 가드들입니다. "요청 값이 이상하면 바로 거절"이 몸에 배어 있어야 합니다.
+
+## 3. 값 전달: 복사본이 넘어간다
+
+기본 타입(int, double, boolean 등)을 인자로 넘기면 값의 복사본이 전달됩니다. 메서드 안에서 매개변수를 바꿔도 바깥의 원본 변수는 변하지 않습니다.
+
+```java
+static void addTen(int n) {
+    n = n + 10;   // 복사본만 바뀐다
+}
+```
+
+정말 그런지 predict/P02에서 확인하세요. 바깥 값을 바꾸고 싶다면 바뀐 값을 return해서 다시 받는 것이 기본입니다: `money = addTen(money);`
+
+## 4. 오버로딩: 같은 이름, 다른 매개변수
+
+```java
+static void print(int x)    { System.out.println("정수: " + x); }
+static void print(double x) { System.out.println("실수: " + x); }
+static void print(String x) { System.out.println("문자열: " + x); }
+```
+
+호출하면 인자의 타입에 맞는 메서드가 선택됩니다. `println`이 숫자든 문자열이든 받아주는 것도 오버로딩 덕분입니다. 어떤 것이 선택되는지 predict/P03에서 확인하세요.
+
+## 문제 풀기
+
+이 모듈부터 작성 과제의 형태가 바뀝니다. 여러분이 메서드 속을 채우면, main의 검증 코드가 여러 입력으로 시험해서 PASS/FAIL을 알려줍니다.
+
+| 순서 | 파일 | 할 일 | 예상 |
+|---|---|---|---|
+| 1 | [P01_CallFlow.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module04/predict/P01_CallFlow.java) | 호출 순서 따라가기. 출력 예측 | 7분 |
+| 2 | [P02_PassByValue.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module04/predict/P02_PassByValue.java) | 값 전달 확인 | 5분 |
+| 3 | [P03_Overload.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module04/predict/P03_Overload.java) | 오버로딩에서 어떤 메서드가 불릴까 | 7분 |
+| 4 | [M01_Extract.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module04/modify/M01_Extract.java) | 복붙된 중복 코드를 메서드로 추출 | 15분 |
+| 5 | [W01_Grade.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module04/make/W01_Grade.java) | 등급 계산 메서드 완성. PASS가 뜨면 성공 | 15분 |
+
+[solutions/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module04/solutions)에 M01과 W01의 해설이 있습니다.
+
+## AI와 함께 (선택, 10분)
+
+이 모듈부터는 여러분이 짠 코드를 AI에게 리뷰받는 연습을 시작합니다. W01을 PASS시킨 뒤에 이렇게 물어보세요.
+
+> 아래는 점수를 등급으로 바꾸는 자바 메서드야. 초보자가 쓴 코드라고 생각하고 리뷰해줘. 고치면 좋은 점을 중요한 순서로 3개까지만, 각각 이유와 함께 알려줘.
+> (여기에 내 코드 붙여넣기)
+
+리뷰 중 하나를 골라 실제로 반영해보세요. 반영하기 전보다 코드가 정말 나아졌는지 스스로 판단하는 것까지가 연습입니다.
+
+다음: [모듈 5. 클래스 기초](https://github.com/lleellee0/sesac4-java-precource/blob/main/docs/05-classes.md)
