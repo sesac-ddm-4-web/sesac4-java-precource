@@ -12,7 +12,7 @@ A트랙 예상 2.5시간 · 코드 위치: [src/module00/](../src/module00)
 |---|---|---|
 | 1 | GitHub 계정 만들기 | github.com 에 로그인이 된다 |
 | 2 | Git 설치하기 | 터미널(Windows는 명령 프롬프트 또는 PowerShell)에서 `git --version` 을 입력하면 버전이 출력된다 |
-| 3 | 이 저장소 내려받기(clone) | `git clone https://github.com/lleellee0/sesac4-java-precource.git` 실행 후, 내 컴퓨터에 폴더가 생겼다 |
+| 3 | 이 저장소 내려받기(clone) | `git clone https://github.com/sesac-ddm-4-web/sesac4-java-precource.git` 실행 후, 내 컴퓨터에 폴더가 생겼다 |
 | 4 | JDK 21 설치하기 | 터미널에서 `java -version` 과 `javac -version` 모두 21로 출력된다 |
 | 5 | IntelliJ IDEA 설치하기 | IntelliJ가 실행된다. 무료 버전이면 충분합니다 (다운로드 페이지에서 Community 또는 무료 옵션을 고르세요) |
 | 6 | IntelliJ로 이 저장소 열기 | 아래 "IntelliJ에서 열기"를 따라 하면 된다 |
