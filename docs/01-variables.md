@@ -1,8 +1,8 @@
 # 모듈 1. 변수와 타입
 
-A트랙 예상 2시간 · 코드 위치: [src/module01/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module01)
+A트랙 예상 2시간 · 코드 위치: [src/module01/](../src/module01)
 
-> 경험자 최단 경로(B트랙): 아래 "핵심 요약"만 읽고 [predict/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module01/predict) 3문제를 풀면 됩니다. 정수 나눗셈과 실수 오차는 다른 언어 경험자도 자주 틀립니다.
+> 경험자 최단 경로(B트랙): 아래 "핵심 요약"만 읽고 [predict/](../src/module01/predict) 3문제를 풀면 됩니다. 정수 나눗셈과 실수 오차는 다른 언어 경험자도 자주 틀립니다.
 
 변수는 값을 담아두는 이름표이고, 타입은 그 값의 종류입니다. 자바는 모든 변수에 타입을 미리 적어야 하는 언어라서, 타입을 읽을 줄 알면 코드의 절반이 읽힙니다.
 
@@ -19,7 +19,7 @@ A트랙 예상 2시간 · 코드 위치: [src/module01/](https://github.com/llee
 - 선언은 `타입 이름 = 값;`. 한 번 정한 타입은 바뀌지 않습니다.
 - 정수는 int(기본), 아주 크면 long. 실수는 double. 참/거짓은 boolean. 한 글자는 char(작은따옴표), 문자열은 String(큰따옴표).
 - 작은 타입에서 큰 타입으로는 자동 변환, 반대로는 `(타입)`을 붙이는 강제 변환이 필요하고 값이 잘릴 수 있습니다.
-- 정수끼리의 나눗셈은 결과도 정수입니다. `7 / 2`는 3입니다.
+- 정수끼리의 나눗셈은 결과도 정수입니다. `7 / 2`는 3, 나머지는 `%`로 구합니다(`7 % 2`는 1).
 - double은 근사값이라 `0.1 + 0.2 == 0.3`이 false입니다. 돈 계산에 double을 쓰면 안 됩니다.
 - 문자열을 숫자로: `Integer.parseInt("123")`. 숫자를 문자열로: `String.valueOf(123)` 또는 `"" + 123`.
 - 변수는 자신이 선언된 중괄호 `{}` 안에서만 살아 있습니다.
@@ -42,7 +42,7 @@ price = 12000;          // 값은 언제든 바꿀 수 있다 (그래서 '변수
 
 - 변수 이름은 소문자로 시작하고, 여러 단어면 두 번째 단어부터 대문자로 씁니다. 예: `totalPrice`, `memberCount`. (camelCase 규칙, 자바의 표준 관례입니다)
 - 숫자로 시작할 수 없고, `int`, `class` 같은 자바 예약어는 이름으로 쓸 수 없습니다.
-- 값을 넣지 않은 지역 변수를 사용하려고 하면 컴파일 에러가 납니다.
+- 값을 넣지 않은 변수(메서드 안에서 선언한 변수를 지역 변수라고 부릅니다)를 사용하려고 하면 컴파일 에러가 납니다.
 - 같은 이름의 변수를 같은 범위에서 두 번 선언할 수 없습니다.
 
 ## 2. 기본 타입
@@ -78,6 +78,7 @@ int e = (int) d;   // 3. 반올림이 아니라 소수점 아래를 버림
 
 - 연산할 때도 변환이 일어납니다. int와 double을 섞어 계산하면 결과는 double입니다.
 - 정수끼리 연산하면 결과도 정수입니다. `7 / 2`는 3.5가 아니라 3입니다. 3.5를 원하면 한쪽을 double로 만들어야 합니다: `7 / 2.0` 또는 `(double) 7 / 2`.
+- 나머지를 구하는 연산자는 `%`입니다. `7 % 2`는 1, `10 % 5`는 0입니다. 짝수 판별(`n % 2 == 0`)이나 자릿수 분리에 자주 씁니다.
 - char를 int에 대입하면 그 문자의 코드 번호가 들어갑니다. `'A'`는 65입니다.
 
 ### 문자열과 숫자 변환
@@ -137,7 +138,7 @@ String name = scanner.next();       // 공백 전까지의 한 단어 읽기
 - nextInt는 정수, nextDouble은 실수, next는 한 단어를 읽습니다.
 - 실행하면 프로그램이 입력을 기다리며 멈춰 있는 것처럼 보입니다. IntelliJ 아래 실행 창을 클릭하고 값을 입력한 뒤 Enter를 누르세요.
 
-실행해보기: [Ex03_Scanner.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module01/ex/Ex03_Scanner.java)
+실행해보기: [Ex03_Scanner.java](../src/module01/ex/Ex03_Scanner.java)
 
 ## 문제 풀기
 
@@ -145,15 +146,16 @@ String name = scanner.next();       // 공백 전까지의 한 단어 읽기
 
 | 순서 | 파일 | 할 일 | 예상 |
 |---|---|---|---|
-| 1 | [Ex01_Variables.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module01/ex/Ex01_Variables.java) | 예제: 선언과 타입 (읽고 실행) | 5분 |
-| 2 | [Ex02_Casting.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module01/ex/Ex02_Casting.java) | 예제: 형변환 (읽고 실행) | 5분 |
-| 3 | [P01_Division.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module01/predict/P01_Division.java) | 정수 나눗셈과 문자열 연결. 출력 예측 | 7분 |
-| 4 | [P02_DoubleTrap.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module01/predict/P02_DoubleTrap.java) | 실수의 함정 | 5분 |
-| 5 | [P03_Casting.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module01/predict/P03_Casting.java) | 형변환과 문자열 변환 | 7분 |
-| 6 | [M01_AverageInput.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module01/modify/M01_AverageInput.java) | 동작하는 입력 코드를 요구사항에 맞게 수정 | 15분 |
-| 7 | [W01_TimeFormat.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module01/make/W01_TimeFormat.java) | 직접 작성. 실행해서 PASS가 뜨면 성공 | 15분 |
+| 1 | [Ex01_Variables.java](../src/module01/ex/Ex01_Variables.java) | 예제: 선언과 타입 (읽고 실행) | 5분 |
+| 2 | [Ex02_Casting.java](../src/module01/ex/Ex02_Casting.java) | 예제: 형변환 (읽고 실행) | 5분 |
+| 3 | [Ex03_Scanner.java](../src/module01/ex/Ex03_Scanner.java) | 예제: 키보드 입력 (읽고 실행, 값을 입력해보기) | 5분 |
+| 4 | [P01_Division.java](../src/module01/predict/P01_Division.java) | 정수 나눗셈과 문자열 연결. 출력 예측 | 7분 |
+| 5 | [P02_DoubleTrap.java](../src/module01/predict/P02_DoubleTrap.java) | 실수의 함정 | 5분 |
+| 6 | [P03_Casting.java](../src/module01/predict/P03_Casting.java) | 형변환과 문자열 변환 | 7분 |
+| 7 | [M01_AverageInput.java](../src/module01/modify/M01_AverageInput.java) | 동작하는 입력 코드를 요구사항에 맞게 수정 | 15분 |
+| 8 | [W01_TimeFormat.java](../src/module01/make/W01_TimeFormat.java) | 직접 작성. 실행해서 PASS가 뜨면 성공 | 15분 |
 
-[solutions/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module01/solutions)에 M01과 W01의 해설이 있습니다. 먼저 풀고 나서 비교하세요.
+[solutions/](../src/module01/solutions)에 M01과 W01의 해설이 있습니다. 먼저 풀고 나서 비교하세요.
 
 ## AI와 함께 (선택, 5분)
 
@@ -163,4 +165,4 @@ String name = scanner.next();       // 공백 전까지의 한 단어 읽기
 
 설명을 듣는 것보다, 퀴즈에 답해보는 쪽이 남습니다.
 
-다음: [모듈 2. 연산자](https://github.com/lleellee0/sesac4-java-precource/blob/main/docs/02-operators.md)
+다음: [모듈 2. 연산자](02-operators.md)

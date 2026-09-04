@@ -1,8 +1,8 @@
 # 모듈 5. 클래스 기초
 
-A트랙 예상 2시간 · 코드 위치: [src/module05/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module05)
+A트랙 예상 2시간 · 코드 위치: [src/module05/](../src/module05)
 
-> 경험자 최단 경로(B트랙): 아래 "핵심 요약"만 읽고 [predict/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module05/predict) 3문제를 풀면 됩니다. P02(참조 복사)와 P03(String 비교)은 경험자도 자주 틀립니다.
+> 경험자 최단 경로(B트랙): 아래 "핵심 요약"만 읽고 [predict/](../src/module05/predict) 3문제를 풀면 됩니다. P02(참조 복사)와 P03(String 비교)은 경험자도 자주 틀립니다.
 
 지금까지는 숫자와 문자열만 다뤘습니다. 하지만 실제 프로그램이 다루는 것은 회원, 주문, 상품 같은 덩어리 데이터입니다. 클래스는 관련된 데이터(필드)와 동작(메서드)을 하나로 묶어 새로운 타입을 만드는 문법입니다. 이 모듈은 선수학습에서 가장 중요한 모듈입니다. 여기까지 오면 입과 준비의 절반 이상이 끝난 셈입니다.
 
@@ -72,7 +72,7 @@ m2.name = "김영희";
 - 필드는 지역 변수와 달리 초기화하지 않으면 기본값을 가집니다. 숫자는 0, boolean은 false, String 같은 참조 타입은 null.
 - 클래스 안의 메서드에 static이 없는 것에 주목하세요. 이런 메서드는 객체를 만들어야 부를 수 있습니다. 아래 5번에서 정리합니다.
 
-실행해보기: [Ex01_Class.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module05/ex/Ex01_Class.java)
+실행해보기: [Ex01_Class.java](../src/module05/ex/Ex01_Class.java)
 
 ## 2. 참조: 변수에는 주소가 담긴다
 
@@ -109,7 +109,7 @@ Exception in thread "main" java.lang.NullPointerException: ...
     at module05.trace.T01_Npe.main(T01_Npe.java:27)
 ```
 
-읽는 법: 무슨 일이 났는지(NullPointerException), 어느 파일 몇 번째 줄인지(T01_Npe.java:25). 이것을 스택트레이스라고 하고, 앞으로 수없이 만나게 됩니다. 에러가 나면 당황하지 말고 첫 줄과 내 코드가 있는 줄을 찾아 읽으세요. trace/T01에서 직접 겪어봅니다.
+읽는 법: 무슨 일이 났는지(NullPointerException), 어느 파일 몇 번째 줄인지(T01_Npe.java:27). 이것을 스택트레이스라고 하고, 앞으로 수없이 만나게 됩니다. 에러가 나면 당황하지 말고 첫 줄과 내 코드가 있는 줄을 찾아 읽으세요. trace/T01에서 직접 겪어봅니다.
 
 > 백엔드 미리보기: NPE는 자바 백엔드에서 가장 흔한 장애 원인입니다. "이 값이 null일 수 있는가"를 항상 의심하는 습관, 그리고 null이면 가드로 걸러내는 습관(모듈 4)이 짝을 이룹니다.
 
@@ -140,7 +140,7 @@ Member m = new Member("홍길동", 1200);   // 만들면서 바로 초기화
 - this는 "지금 이 객체 자신"을 가리킵니다. 매개변수와 필드 이름이 같을 때 `this.필드 = 매개변수`로 구분합니다.
 - 생성자도 오버로딩할 수 있습니다(모듈 4).
 
-실행해보기: [Ex02_Constructor.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module05/ex/Ex02_Constructor.java)
+실행해보기: [Ex02_Constructor.java](../src/module05/ex/Ex02_Constructor.java)
 
 ## 5. static: 객체 소속이 아니라 클래스 소속
 
@@ -161,7 +161,7 @@ class Counter {
 
 모듈 4에서 메서드마다 static을 붙였던 이유가 이제 설명됩니다. main이 static이라 객체 없이 실행되므로, main에서 바로 부르는 메서드도 static이어야 했던 것입니다. 앞으로 객체의 데이터(필드)를 다루는 메서드는 static 없이, 데이터와 무관한 도구성 메서드는 static으로 만들게 됩니다. `Math.random()`이 대표적인 static 메서드입니다.
 
-실행해보기: [Ex03_Static.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module05/ex/Ex03_Static.java)
+실행해보기: [Ex03_Static.java](../src/module05/ex/Ex03_Static.java)
 
 ## 6. String의 == 와 equals
 
@@ -181,13 +181,13 @@ a.equals(b)   // true  (내용이 같음)
 
 | 순서 | 파일 | 할 일 | 예상 |
 |---|---|---|---|
-| 1 | [P01_TwoObjects.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module05/predict/P01_TwoObjects.java) | 객체는 각자의 필드를 가진다. 출력 예측 | 5분 |
-| 2 | [P02_SameRef.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module05/predict/P02_SameRef.java) | 참조 복사의 함정 | 7분 |
-| 3 | [P03_StringEquals.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module05/predict/P03_StringEquals.java) | == 와 equals | 7분 |
-| 4 | [T01_Npe.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module05/trace/T01_Npe.java) | NPE를 직접 겪고, 스택트레이스를 읽고, 가드로 고치기 | 15분 |
-| 5 | [W01_Member.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module05/make/W01_Member.java) | Member 클래스 완성. PASS가 뜨면 성공 | 20분 |
+| 1 | [P01_TwoObjects.java](../src/module05/predict/P01_TwoObjects.java) | 객체는 각자의 필드를 가진다. 출력 예측 | 5분 |
+| 2 | [P02_SameRef.java](../src/module05/predict/P02_SameRef.java) | 참조 복사의 함정 | 7분 |
+| 3 | [P03_StringEquals.java](../src/module05/predict/P03_StringEquals.java) | == 와 equals | 7분 |
+| 4 | [T01_Npe.java](../src/module05/trace/T01_Npe.java) | NPE를 직접 겪고, 스택트레이스를 읽고, 가드로 고치기 | 15분 |
+| 5 | [W01_Member.java](../src/module05/make/W01_Member.java) | Member 클래스 완성. PASS가 뜨면 성공 | 20분 |
 
-[solutions/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module05/solutions)에 W01의 해설이 있습니다.
+[solutions/](../src/module05/solutions)에 W01의 해설이 있습니다.
 
 ## AI와 함께 (선택, 5분)
 
@@ -195,4 +195,4 @@ a.equals(b)   // true  (내용이 같음)
 
 > 자바의 클래스와 객체의 관계를 붕어빵 틀 말고 다른 비유 두 가지로 설명해줘. 그리고 "회원가입한 사용자 100만 명"은 클래스와 객체 중 무엇이 100만 개라는 뜻인지 물어보는 퀴즈를 포함해줘.
 
-다음: [모듈 6. 배열 맛보기](https://github.com/lleellee0/sesac4-java-precource/blob/main/docs/06-arrays.md)
+다음: [모듈 6. 배열 맛보기](06-arrays.md)

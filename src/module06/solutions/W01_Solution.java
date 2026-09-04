@@ -4,7 +4,7 @@ package module06.solutions;
 // 나눗셈에서 (double)로 변환하지 않으면 정수 나눗셈이 되어 소수점이 사라지는 것에 주의하세요.
 public class W01_Solution {
     public static void main(String[] args) {
-        int[] scores = {70, 95, 60, 88, 77};
+        int[] scores = {70, 95, 60, 88, 78};
 
         int max = scores[0];   // 일단 첫 값을 최고라고 둔다
         int sum = 0;

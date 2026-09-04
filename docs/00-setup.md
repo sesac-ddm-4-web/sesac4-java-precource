@@ -1,6 +1,6 @@
 # 모듈 0. 환경 셋업과 첫 프로그램
 
-A트랙 예상 2.5시간 · 코드 위치: [src/module00/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module00)
+A트랙 예상 2.5시간 · 코드 위치: [src/module00/](../src/module00)
 
 > 모든 트랙 공통입니다. 이미 환경이 갖춰져 있다면 아래 퀘스트의 7번(Hello 실행)만 확인하고 넘어가세요.
 
@@ -14,7 +14,7 @@ A트랙 예상 2.5시간 · 코드 위치: [src/module00/](https://github.com/ll
 | 2 | Git 설치하기 | 터미널(Windows는 명령 프롬프트 또는 PowerShell)에서 `git --version` 을 입력하면 버전이 출력된다 |
 | 3 | 이 저장소 내려받기(clone) | `git clone https://github.com/lleellee0/sesac4-java-precource.git` 실행 후, 내 컴퓨터에 폴더가 생겼다 |
 | 4 | JDK 21 설치하기 | 터미널에서 `java -version` 과 `javac -version` 모두 21로 출력된다 |
-| 5 | IntelliJ IDEA Community(무료) 설치하기 | IntelliJ가 실행된다 |
+| 5 | IntelliJ IDEA 설치하기 | IntelliJ가 실행된다. 무료 버전이면 충분합니다 (다운로드 페이지에서 Community 또는 무료 옵션을 고르세요) |
 | 6 | IntelliJ로 이 저장소 열기 | 아래 "IntelliJ에서 열기"를 따라 하면 된다 |
 | 7 | 첫 프로그램 실행하기 | `src/module00/ex/Hello.java` 를 실행해서 "Hello, backend!"가 출력된다 |
 
@@ -34,9 +34,11 @@ A트랙 예상 2.5시간 · 코드 위치: [src/module00/](https://github.com/ll
 
 이후 모든 문제 파일도 같은 방식으로 실행합니다: 파일을 열고, main 옆 초록 화살표를 누른다.
 
+참고: 학습 문서 안의 파일 링크는 GitHub 웹에서 코드를 미리 보는 용도입니다. 실제 실행은 방금 IntelliJ로 연 내 컴퓨터의 같은 파일에서 합니다. 문서가 `src/module01/predict/P01_Division.java`를 가리키면, IntelliJ 왼쪽 트리에서 같은 경로를 찾아 여세요.
+
 ## 첫 프로그램 뜯어보기
 
-실행해보기: [Hello.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module00/ex/Hello.java)
+실행해보기: [Hello.java](../src/module00/ex/Hello.java)
 
 ```java
 package module00.ex;                          // 이 파일이 속한 폴더(패키지)
@@ -64,8 +66,8 @@ public class Hello {                          // 클래스: 자바 코드의 기
 
 | 순서 | 파일 | 할 일 | 예상 |
 |---|---|---|---|
-| 1 | [P01_Print.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module00/predict/P01_Print.java) | println과 print의 차이, 실행 순서 | 5분 |
-| 2 | [P02_Comments.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module00/predict/P02_Comments.java) | 주석은 실행되지 않는다 | 5분 |
+| 1 | [P01_Print.java](../src/module00/predict/P01_Print.java) | println과 print의 차이, 실행 순서 | 5분 |
+| 2 | [P02_Comments.java](../src/module00/predict/P02_Comments.java) | 주석은 실행되지 않는다 | 5분 |
 
 ## 자주 막히는 지점 FAQ
 
@@ -84,7 +86,10 @@ Windows에서 종종 있습니다. File, Settings에서 "File Encodings"를 검�
 **Q. git clone 하는 위치는 어디가 좋나요?**
 경로에 한글이나 공백이 없는 폴더를 권합니다. 예: `C:\dev` 또는 `~/dev`. 사용자 이름이 한글인 Windows 계정에서는 바탕화면 대신 `C:\dev` 같은 별도 폴더를 만드는 것이 안전합니다.
 
-**Q. 그 밖의 모든 에러.**
-에러 메시지를 통째로 복사해서 AI에게 붙여넣고, 사용 중인 OS(Windows/Mac)와 "자바 초보자"라는 사실을 함께 알려주세요. 대부분 해결됩니다. 그래도 안 되면 {문의 채널}로 질문하세요.
+**Q. 실행하려는 파일이 아닌 다른 파일에서 에러가 나면서 실행이 안 됩니다.**
+자바는 실행 전에 프로젝트의 모든 파일을 컴파일합니다. 만들다 만 작성 과제(예: 모듈 1의 W01)에 문법 에러가 남아 있으면, 그 파일과 상관없는 다른 파일도 실행되지 않습니다. 에러 목록에 뜬 파일을 열어 고치거나, 문제가 되는 줄을 주석 처리하세요. 도저히 안 되면 그 파일만 GitHub의 원본 내용으로 되돌려도 됩니다.
 
-다음: [모듈 1. 변수와 타입](https://github.com/lleellee0/sesac4-java-precource/blob/main/docs/01-variables.md)
+**Q. 그 밖의 모든 에러.**
+에러 메시지를 통째로 복사해서 AI에게 붙여넣고, 사용 중인 OS(Windows/Mac)와 "자바 초보자"라는 사실을 함께 알려주세요. 대부분 해결됩니다. 그래도 안 되면 공지에 안내된 문의 채널로 질문하세요.
+
+다음: [모듈 1. 변수와 타입](01-variables.md)

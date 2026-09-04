@@ -20,6 +20,7 @@ package module03.make;
  *   - 숫자를 문자열에 붙이기: result = result + day;
  *
  * 아래 검증 코드가 PASS를 출력하면 성공입니다. (검증 코드는 수정하지 마세요)
+ * 검증 코드에는 아직 배우지 않은 문법이 섞여 있을 수 있습니다. 읽지 못해도 괜찮고, 수정만 하지 않으면 됩니다.
  * 막히면 20분까지만 고민하고 solutions/W01_Solution.java 를 열어보세요.
  */
 public class W01_OpsSchedule {

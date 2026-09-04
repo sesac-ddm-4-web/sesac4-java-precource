@@ -1,8 +1,8 @@
 # 모듈 6. 배열 맛보기
 
-A트랙 예상 1시간 · 코드 위치: [src/module06/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module06)
+A트랙 예상 1시간 · 코드 위치: [src/module06/](../src/module06)
 
-> 경험자 최단 경로(B트랙): 아래 "핵심 요약"만 읽고 [predict/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module06/predict) 2문제를 풀면 됩니다.
+> 경험자 최단 경로(B트랙): 아래 "핵심 요약"만 읽고 [predict/](../src/module06/predict) 2문제를 풀면 됩니다.
 
 값 100개를 변수 100개로 다룰 수는 없습니다. 배열은 같은 타입의 값 여러 개를 한 줄로 묶어 번호(인덱스)로 접근하는 가장 기본적인 자료구조입니다. 입과 후 바로 배우게 될 컬렉션(ArrayList, HashMap 등)의 출발점이기도 합니다. 여기서는 맛보기로 1차원 배열만 다룹니다.
 
@@ -46,7 +46,7 @@ System.out.println(primes.length);   // 5 (칸의 개수)
 - 없는 칸에 접근하면 ArrayIndexOutOfBoundsException이 나며 죽습니다. 모듈 5의 NPE처럼, 스택트레이스에서 몇 번째 줄인지 읽으면 됩니다.
 - 한 번 만든 배열의 크기는 바꿀 수 없습니다. 늘었다 줄었다 하는 목록이 필요하면 ArrayList를 쓰는데, 그것이 입과 후 첫 주에 배울 컬렉션입니다.
 
-실행해보기: [Ex01_Array.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module06/ex/Ex01_Array.java)
+실행해보기: [Ex01_Array.java](../src/module06/ex/Ex01_Array.java)
 
 ## 2. 배열과 반복문
 
@@ -77,10 +77,10 @@ for (int score : scores) {
 
 | 순서 | 파일 | 할 일 | 예상 |
 |---|---|---|---|
-| 1 | [P01_IndexBasics.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module06/predict/P01_IndexBasics.java) | 인덱스, 기본값, length. 출력 예측 | 5분 |
-| 2 | [P02_OutOfBounds.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module06/predict/P02_OutOfBounds.java) | 경계를 넘으면 생기는 일. 예측하고, 겪고, 고치기 | 10분 |
-| 3 | [W01_Stats.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module06/make/W01_Stats.java) | 최고 점수와 평균 구하기. PASS가 뜨면 성공 | 15분 |
+| 1 | [P01_IndexBasics.java](../src/module06/predict/P01_IndexBasics.java) | 인덱스, 기본값, length. 출력 예측 | 5분 |
+| 2 | [P02_OutOfBounds.java](../src/module06/predict/P02_OutOfBounds.java) | 경계를 넘으면 생기는 일. 예측하고, 겪고, 고치기 | 10분 |
+| 3 | [W01_Stats.java](../src/module06/make/W01_Stats.java) | 최고 점수와 평균 구하기. PASS가 뜨면 성공 | 15분 |
 
-[solutions/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module06/solutions)에 W01의 해설이 있습니다.
+[solutions/](../src/module06/solutions)에 W01의 해설이 있습니다.
 
-다음: [모듈 7. 미니 과제: 숫자 야구](https://github.com/lleellee0/sesac4-java-precource/blob/main/docs/07-final-project.md)
+다음: [모듈 7. 미니 과제: 숫자 야구](07-final-project.md)

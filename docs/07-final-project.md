@@ -1,6 +1,6 @@
 # 모듈 7. 미니 과제: 숫자 야구 게임
 
-A트랙 예상 2시간 · 코드 위치: [src/module07/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module07)
+A트랙 예상 2시간 · 코드 위치: [src/module07/](../src/module07)
 
 > 모든 트랙 공통 과제입니다. 지금까지 배운 것(변수, 연산자, 조건문, 반복문, 메서드, 배열)을 전부 조합해서, 처음으로 프로그램 하나를 통째로 만들어봅니다.
 
@@ -41,7 +41,7 @@ A트랙 예상 2시간 · 코드 위치: [src/module07/](https://github.com/llee
 
 선택 (필수를 끝낸 뒤에):
 
-- 입력이 3자리가 아니거나 숫자가 아닐 때 안내하고 다시 입력받기
+- 입력이 100~999 범위가 아닐 때 안내하고 다시 입력받기 (숫자가 아닌 입력까지 막고 싶다면 `scanner.hasNextInt()`로 먼저 확인하는 방법이 있습니다. 검색해보세요)
 - 같은 숫자가 섞인 입력(예: 112) 거르기
 - 게임이 끝나면 "다시 하시겠습니까?"를 물어 재시작하기
 
@@ -53,7 +53,7 @@ A트랙 예상 2시간 · 코드 위치: [src/module07/](https://github.com/llee
 int digit = (int) (Math.random() * 10);   // 0~9 중 하나
 ```
 
-"서로 다른 숫자 3개"는 어떻게 보장할까요? 한 가지 전략: 일단 3개를 뽑고, 겹치면 처음부터 다시 뽑기를 성공할 때까지 반복합니다. (while과 조건문의 조합)
+"서로 다른 숫자 3개"는 어떻게 보장할까요? 한 가지 전략: 일단 3개를 뽑고, 겹치면 처음부터 다시 뽑기를 성공할 때까지 반복합니다. (while과 조건문의 조합) 첫 자리가 0인 경우도 같은 방식으로 다시 뽑으면 됩니다. 또는 첫 자리만 `(int) (Math.random() * 9) + 1`로 1~9에서 뽑는 방법도 있습니다.
 
 **입력을 자릿수로 쪼개기.** 사용자가 425를 입력했다면:
 
@@ -76,7 +76,7 @@ int ones = 425 % 10;             // 5
 5. 시도 횟수를 세서 마지막에 출력한다.
 6. (선택) 잘못된 입력 처리를 붙인다.
 
-시작 골격: [BaseballGame.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module07/BaseballGame.java)
+시작 골격: [BaseballGame.java](../src/module07/BaseballGame.java)
 
 ## 스스로 점검하기
 
@@ -97,6 +97,6 @@ int ones = 425 % 10;             // 5
 
 다 만들었다면 축하합니다. 입과 후 첫 미니 프로젝트에서 이 코드를 객체지향으로 다시 만나게 됩니다.
 
-[solutions/BaseballGameSolution.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module07/solutions/BaseballGameSolution.java)에 완성 예시가 있습니다. 반드시 스스로 완성한 뒤, 또는 정말 막혔을 때만 여세요.
+[solutions/BaseballGameSolution.java](../src/module07/solutions/BaseballGameSolution.java)에 완성 예시가 있습니다. 반드시 스스로 완성한 뒤, 또는 정말 막혔을 때만 여세요.
 
-심화를 원한다면: [콘솔 계좌 관리](https://github.com/lleellee0/sesac4-java-precource/blob/main/docs/extra-bank.md)
+심화를 원한다면: [콘솔 계좌 관리](extra-bank.md)

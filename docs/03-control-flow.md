@@ -1,8 +1,8 @@
 # 모듈 3. 조건문과 반복문
 
-A트랙 예상 2시간 · 코드 위치: [src/module03/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module03)
+A트랙 예상 2시간 · 코드 위치: [src/module03/](../src/module03)
 
-> 경험자 최단 경로(B트랙): 아래 "핵심 요약"만 읽고 [predict/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module03/predict) 4문제를 풀면 됩니다.
+> 경험자 최단 경로(B트랙): 아래 "핵심 요약"만 읽고 [predict/](../src/module03/predict) 4문제를 풀면 됩니다.
 
 프로그램은 위에서 아래로 흐르지만, 실무 코드의 절반은 그 흐름을 꺾는 일입니다. 조건에 따라 갈라지고(분기), 같은 일을 되풀이합니다(반복). 입과 후에 만날 서버 코드도 결국 "요청이 올 때마다(반복) 상황에 맞게 처리하는(분기)" 프로그램입니다.
 
@@ -57,7 +57,7 @@ if (조건식1) {
 
 ### 예제
 
-실행해보기: [Ex01_If.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module03/ex/Ex01_If.java)
+실행해보기: [Ex01_If.java](../src/module03/ex/Ex01_If.java)
 
 ```java
 int amount = 120000; // 주문 금액
@@ -94,14 +94,14 @@ switch (비교할 값) {
 
 알아둘 것:
 
-- 비교할 값으로는 int, char, String, enum 등을 쓸 수 있습니다. long, double은 쓸 수 없습니다.
+- 비교할 값으로는 int, char, String 등을 쓸 수 있습니다(enum이라는 타입도 가능한데, 본과정에서 배웁니다). long, double은 쓸 수 없습니다.
 - case 뒤에는 변하지 않는 값(상수)만 올 수 있습니다. `case x > 10:` 같은 조건식은 안 됩니다. 범위 비교가 필요하면 if를 쓰세요.
 - break를 만나면 switch 전체를 빠져나갑니다. break가 없으면 다음 case의 코드까지 이어서 실행됩니다. 이것을 fall-through(흘러내림)라고 부릅니다.
 - default는 생략할 수 있고, 관례상 마지막에 둡니다.
 
 ### 예제
 
-실행해보기: [Ex02_Switch.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module03/ex/Ex02_Switch.java)
+실행해보기: [Ex02_Switch.java](../src/module03/ex/Ex02_Switch.java)
 
 ```java
 String method = "POST"; // HTTP 요청의 종류. 입과 후 매일 만나게 됩니다.
@@ -139,7 +139,7 @@ do {
 
 ### 예제
 
-실행해보기: [Ex03_While.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module03/ex/Ex03_While.java)
+실행해보기: [Ex03_While.java](../src/module03/ex/Ex03_While.java)
 
 ```java
 int retry = 0;
@@ -205,7 +205,7 @@ for (int i = 1; i <= 5; i++) {
 - 둘 다 반복문 안에서만 쓸 수 있습니다.
 - 반복문이 중첩되어 있으면 가장 안쪽 반복문에만 적용됩니다.
 
-실행해보기: [Ex04_For.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module03/ex/Ex04_For.java)
+실행해보기: [Ex04_For.java](../src/module03/ex/Ex04_For.java)
 
 ## 문제 풀기
 
@@ -213,15 +213,15 @@ for (int i = 1; i <= 5; i++) {
 
 | 순서 | 파일 | 할 일 | 예상 |
 |---|---|---|---|
-| 1 | [P01_IfOrder.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module03/predict/P01_IfOrder.java) | 조건 순서의 함정. 출력 예측 | 5분 |
-| 2 | [P02_ForSum.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module03/predict/P02_ForSum.java) | 반복의 흐름 따라가기 | 7분 |
-| 3 | [P03_LoopExit.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module03/predict/P03_LoopExit.java) | break, continue 조합 | 7분 |
-| 4 | [P04_SwitchFall.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module03/predict/P04_SwitchFall.java) | break 없는 switch | 5분 |
-| 5 | [T01_FindBug.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module03/trace/T01_FindBug.java) | 끝나지 않는 프로그램의 원인을 찾아 고치기 (주의: 실행하면 멈추지 않는 것이 정상입니다. IntelliJ의 빨간 정지 버튼으로 꺼주세요) | 10분 |
-| 6 | [M01_Gugudan.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module03/modify/M01_Gugudan.java) | 동작하는 코드를 요구사항에 맞게 업그레이드 | 15분 |
-| 7 | [W01_OpsSchedule.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module03/make/W01_OpsSchedule.java) | 직접 작성. 실행해서 PASS가 뜨면 성공 | 20분 |
+| 1 | [P01_IfOrder.java](../src/module03/predict/P01_IfOrder.java) | 조건 순서의 함정. 출력 예측 | 5분 |
+| 2 | [P02_ForSum.java](../src/module03/predict/P02_ForSum.java) | 반복의 흐름 따라가기 | 7분 |
+| 3 | [P03_LoopExit.java](../src/module03/predict/P03_LoopExit.java) | break, continue 조합 | 7분 |
+| 4 | [P04_SwitchFall.java](../src/module03/predict/P04_SwitchFall.java) | break 없는 switch | 5분 |
+| 5 | [T01_FindBug.java](../src/module03/trace/T01_FindBug.java) | 끝나지 않는 프로그램의 원인을 찾아 고치기 (주의: 실행하면 멈추지 않는 것이 정상입니다. IntelliJ의 빨간 정지 버튼으로 꺼주세요) | 10분 |
+| 6 | [M01_Gugudan.java](../src/module03/modify/M01_Gugudan.java) | 동작하는 코드를 요구사항에 맞게 업그레이드 | 15분 |
+| 7 | [W01_OpsSchedule.java](../src/module03/make/W01_OpsSchedule.java) | 직접 작성. 실행해서 PASS가 뜨면 성공 | 20분 |
 
-[solutions/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module03/solutions) 폴더에 M01과 W01의 해설이 있습니다. 먼저 풀고 나서 비교하세요. 정답은 하나가 아닙니다.
+[solutions/](../src/module03/solutions) 폴더에 M01과 W01의 해설이 있습니다. 먼저 풀고 나서 비교하세요. 정답은 하나가 아닙니다.
 
 ## AI와 함께 (선택, 10분)
 
@@ -243,4 +243,4 @@ if (age >= 19) {
 
 바뀐 결과에서 관찰할 것 두 가지: ① 조건이 어떻게 뒤집혔나(안 되는 경우를 먼저 걸러내기) ② 중첩 깊이가 어떻게 줄었나. 이 감각은 입과 후 코드 리뷰에서 계속 쓰게 됩니다.
 
-다음: [모듈 4. 메서드](https://github.com/lleellee0/sesac4-java-precource/blob/main/docs/04-methods.md)
+다음: [모듈 4. 메서드](04-methods.md)

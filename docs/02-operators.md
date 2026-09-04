@@ -1,8 +1,8 @@
 # 모듈 2. 연산자
 
-A트랙 예상 1시간 · 코드 위치: [src/module02/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module02)
+A트랙 예상 1시간 · 코드 위치: [src/module02/](../src/module02)
 
-> 경험자 최단 경로(B트랙): 아래 "핵심 요약"만 읽고 [predict/](https://github.com/lleellee0/sesac4-java-precource/tree/main/src/module02/predict) 3문제를 풀면 됩니다. 오버플로 문제는 경험자도 자주 틀립니다.
+> 경험자 최단 경로(B트랙): 아래 "핵심 요약"만 읽고 [predict/](../src/module02/predict) 3문제를 풀면 됩니다. 오버플로 문제는 경험자도 자주 틀립니다.
 
 연산자 자체는 수학 기호와 비슷해서 어렵지 않습니다. 이 모듈의 진짜 목적은 연산자 주변의 함정들, 그러니까 오버플로, 정수 나눗셈, 증감 연산자의 위치 같은 것들을 미리 밟아보는 것입니다.
 
@@ -100,7 +100,7 @@ System.out.println(max + 1);   // ?  predict/P03에서 확인
 
 - 곱셈은 특히 위험합니다. `100000 * 100000`은 100억이라 int를 넘칩니다.
 - 계산 결과가 int를 넘을 수 있으면 long으로 계산하세요. `100000L * 100000` 처럼 한쪽에 L만 붙여도 됩니다.
-- 실수 나눗셈에는 오버플로 대신 다른 세계가 있습니다. `5.0 / 0`은 Infinity, `0.0 / 0.0`은 NaN(Not a Number)이 나옵니다. 정수 `5 / 0`은 프로그램이 죽습니다(예외. 모듈이 아니라 본과정에서 다룹니다).
+- 실수 나눗셈에는 오버플로 대신 다른 세계가 있습니다. `5.0 / 0`은 Infinity, `0.0 / 0.0`은 NaN(Not a Number)이 나옵니다. 정수 `5 / 0`은 프로그램이 죽습니다. 이것을 예외라고 하는데, 이 선수학습 범위 밖이라 본과정에서 다룹니다.
 
 > 백엔드 미리보기: 조회수 합계, 누적 금액, 밀리초 타임스탬프. 전부 int를 넘기 쉬운 값들이라 실무에서는 long이 기본입니다.
 
@@ -114,11 +114,11 @@ System.out.println(max + 1);   // ?  predict/P03에서 확인
 
 | 순서 | 파일 | 할 일 | 예상 |
 |---|---|---|---|
-| 1 | [Ex01_IncDec.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module02/ex/Ex01_IncDec.java) | 예제: 증감 연산자 (읽고 실행) | 3분 |
-| 2 | [Ex02_Ternary.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module02/ex/Ex02_Ternary.java) | 예제: 삼항 연산자 (읽고 실행) | 3분 |
-| 3 | [P01_IncDec.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module02/predict/P01_IncDec.java) | 전위/후위 증감. 출력 예측 | 7분 |
-| 4 | [P02_ShortCircuit.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module02/predict/P02_ShortCircuit.java) | 단락 평가 | 7분 |
-| 5 | [P03_Overflow.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module02/predict/P03_Overflow.java) | 오버플로와 Infinity, NaN | 7분 |
-| 6 | [T01_DiscountBug.java](https://github.com/lleellee0/sesac4-java-precource/blob/main/src/module02/trace/T01_DiscountBug.java) | 할인가가 이상하게 나오는 버그 찾아 고치기 | 10분 |
+| 1 | [Ex01_IncDec.java](../src/module02/ex/Ex01_IncDec.java) | 예제: 증감 연산자 (읽고 실행) | 3분 |
+| 2 | [Ex02_Ternary.java](../src/module02/ex/Ex02_Ternary.java) | 예제: 삼항 연산자 (읽고 실행) | 3분 |
+| 3 | [P01_IncDec.java](../src/module02/predict/P01_IncDec.java) | 전위/후위 증감. 출력 예측 | 7분 |
+| 4 | [P02_ShortCircuit.java](../src/module02/predict/P02_ShortCircuit.java) | 단락 평가 | 7분 |
+| 5 | [P03_Overflow.java](../src/module02/predict/P03_Overflow.java) | 오버플로와 Infinity, NaN | 7분 |
+| 6 | [T01_DiscountBug.java](../src/module02/trace/T01_DiscountBug.java) | 할인가가 이상하게 나오는 버그 찾아 고치기 | 10분 |
 
-다음: [모듈 3. 조건문과 반복문](https://github.com/lleellee0/sesac4-java-precource/blob/main/docs/03-control-flow.md)
+다음: [모듈 3. 조건문과 반복문](03-control-flow.md)

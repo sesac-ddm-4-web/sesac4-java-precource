@@ -12,10 +12,11 @@ package module06.make;
  *   - 평균은 합계를 먼저 구한 뒤 개수로 나눕니다. 개수는 scores.length에 있습니다.
  *
  * 아래 검증 코드가 PASS를 출력하면 성공입니다. (검증 코드는 수정하지 마세요)
+ * 검증 코드에는 아직 배우지 않은 문법이 섞여 있을 수 있습니다. 읽지 못해도 괜찮고, 수정만 하지 않으면 됩니다.
  */
 public class W01_Stats {
     public static void main(String[] args) {
-        int[] scores = {70, 95, 60, 88, 77};
+        int[] scores = {70, 95, 60, 88, 78};
 
         int max = 0;
         double average = 0;
@@ -28,8 +29,8 @@ public class W01_Stats {
 
         // ----- 검증 (수정 금지) -----
         boolean maxOk = max == 95;
-        boolean avgOk = average == 78.0;
+        boolean avgOk = average == 78.2;
         System.out.println("최고 점수(" + max + ") : " + (maxOk ? "PASS" : "FAIL (기대값 95)"));
-        System.out.println("평균(" + average + ") : " + (avgOk ? "PASS" : "FAIL (기대값 78.0)"));
+        System.out.println("평균(" + average + ") : " + (avgOk ? "PASS" : "FAIL (기대값 78.2)"));
     }
 }
